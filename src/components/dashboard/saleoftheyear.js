@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Linechart from '../charts/linechart';
+import CurrencyFormat from "react-currency-format";
+
 class Saleoftheyear extends Component {
 
     constructor() {
@@ -101,13 +103,26 @@ class Saleoftheyear extends Component {
                     <div className="card-footer d-flex flex-wrap bg-white p-0">
                         <div className="col-6 px-0">
                             <div className="text-center p-4">
-                                <h4>{this.state.data.details.orders}</h4>
+                                <h4>
+                                    <CurrencyFormat
+                                        value={this.state.data.details.orders}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={""}
+                                    />
+                                </h4>
                                 <p className="mt-2">Total orders of this year</p>
                             </div>
                         </div>
                         <div className="col-6 px-0">
                             <div className="text-center p-4 border-left">
-                                <h4>{this.state.data.details.revenue}</h4>
+                                <h4>
+                                    <CurrencyFormat
+                                        value={this.state.data.details.revenue}
+                                        displayType={"text"}
+                                        thousandSeparator={true}
+                                        prefix={"$"}
+                                    /></h4>
                                 <p className="mt-2">Total revenue of this year</p>
                             </div>
                         </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CurrencyFormat from "react-currency-format";
 
 class Topproducts extends Component {
 
@@ -76,8 +77,18 @@ class Topproducts extends Component {
                                     <p className="float-md-right"><span className="text-dark mr-2">{product.total_sale}</span>Sales</p>
                                     <p className="d-none d-md-block">{product.description}</p>
                                     <p className="mb-0">
-                                        <del>${product.original_price}</del>
-                                        <span className="text-dark ml-3">${product.discount_price}</span>
+                                        <del><CurrencyFormat
+                                            value={product.original_price}
+                                            displayType={"text"}
+                                            thousandSeparator={true}
+                                            prefix={"$"}
+                                        /></del>
+                                        <span className="text-dark ml-3"><CurrencyFormat
+                                            value={product.discount_price}
+                                            displayType={"text"}
+                                            thousandSeparator={true}
+                                            prefix={"$"}
+                                        /></span>
                                     </p>
                                 </div>
                             </div>

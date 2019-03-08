@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import CurrencyFormat from "react-currency-format";
 class Newcustomer extends Component {
 
     constructor() {
@@ -85,7 +85,13 @@ class Newcustomer extends Component {
                                             </div>
                                         </td>
                                         <td >{custom.ordered_units} Orders</td>
-                                        <td className="text-dark d-none d-md-block">${custom.order_cost}</td>
+                                        <td className="text-dark d-none d-md-block"><CurrencyFormat
+                                            value={custom.order_cost}
+                                            displayType={"text"}
+                                            thousandSeparator={true}
+                                            prefix={"$"}
+                                        />
+                                        </td>
                                     </tr>
 
                                 )}

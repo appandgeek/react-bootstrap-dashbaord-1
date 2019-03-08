@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CurrencyFormat from "react-currency-format";
 
 class Recentorders extends Component {
 
@@ -84,7 +85,12 @@ class Recentorders extends Component {
                                         </td>
                                         <td className="d-none d-md-table-cell">{order.units} Unit</td>
                                         <td className="d-none d-md-table-cell">{order.order_date}</td>
-                                        <td className="d-none d-md-table-cell">${order.order_cost}</td>
+                                        <td className="d-none d-md-table-cell"><CurrencyFormat
+                                            value={order.order_cost}
+                                            displayType={"text"}
+                                            thousandSeparator={true}
+                                            prefix={"$"}
+                                        /></td>
                                         <td >
                                             <span className={order.status_code == 1 ? "badge badge-success" : order.status_code == 2 || order.status_code == 3 ? "badge badge-warning" : order.status_code == 4 ? "badge badge-danger" : "badge badge-warning"}> {order.status}</span>
                                         </td>

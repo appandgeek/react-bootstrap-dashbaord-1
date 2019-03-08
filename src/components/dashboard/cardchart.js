@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Bar, Line } from 'react-chartjs-2';
+import CurrencyFormat from "react-currency-format";
 
 class Cardchart extends Component {
     constructor(props) {
@@ -12,7 +13,14 @@ class Cardchart extends Component {
             <div className="col-xl-3 col-sm-6" style={{ 'textAlign': 'left' }}>
                 <div className="card card-mini mb-4">
                     <div className="card-body">
-                        <h2 className="mb-1">{this.props.data.datachart.details.value}</h2>
+                        <h2 className="mb-1">
+                            <CurrencyFormat
+                                value={this.props.data.datachart.details.value}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={""}
+                            />
+                        </h2>
                         <p>{this.props.data.datachart.details.title}</p>
 
                         <div className="chartjs-wrapper">

@@ -44,7 +44,7 @@ class Dashboard extends Component {
                     details: {
                         type: "Bar",
                         title: "Online Signups",
-                        value: "71,503"
+                        value: "71503"
                     }
 
                 }
@@ -80,7 +80,7 @@ class Dashboard extends Component {
                     details: {
                         type: "Line",
                         title: "New Visitors Today",
-                        value: "9,503"
+                        value: "9503"
                     }
                 }
             },
@@ -110,7 +110,7 @@ class Dashboard extends Component {
                     details: {
                         type: "Line",
                         title: "Monthly Total Order",
-                        value: "71,503"
+                        value: "71503"
                     }
                 }
             },
@@ -135,7 +135,7 @@ class Dashboard extends Component {
                     details: {
                         type: "Line",
                         title: "Total Revenue This year",
-                        value: "9,503"
+                        value: "9503"
                     }
                 }
             }
