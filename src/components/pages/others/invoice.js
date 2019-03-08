@@ -111,7 +111,7 @@ class Invoice extends Component {
                     <span className="d-inline-block float-right">$8.686,70</span>
                                 </li>
                             </ul>
-                            <a href="#" className="btn btn-block mt-2 btn-lg btn-primary btn-pill"> Procced to Payment</a>
+                            <button className="btn btn-block mt-2 btn-lg btn-primary btn-pill"> Procced to Payment</button>
                         </div>
                     </div>
                 </div>

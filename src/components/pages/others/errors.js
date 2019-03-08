@@ -13,7 +13,7 @@ const error = () => {
                         <Link to="/" className="btn btn-primary btn-pill">Back to Home</Link>
                     </div>
                     <div className="col-xl-6 pt-5 pt-xl-0 text-center">
-                        <img src="assets/img/lightenning.png" className="img-responsive" alt="Error Page Image" />
+                        <img src="assets/img/lightenning.png" className="img-responsive" alt="Error Page " />
                     </div>
                 </div>
             </div>

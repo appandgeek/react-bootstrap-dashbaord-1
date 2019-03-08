@@ -9,7 +9,7 @@ const timeline = (props) => {
             {props.timeline.map((data, index) =>
                 <div className="media mt-5 profile-timeline-media" key={index}>
                     <div className="align-self-start iconbox-45 overflow-hidden mr-3">
-                        <img src={data.avatar} alt="Generic placeholder image" />
+                        <img src={data.avatar} alt="Generic placeholder" />
                     </div>
                     <div className="media-body" style={{ 'textAlign': 'left' }}>
                         <h6 className="mt-0 text-dark">{data.name}</h6>

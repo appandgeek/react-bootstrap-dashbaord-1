@@ -10,7 +10,7 @@ class Sidebar extends Component {
             <aside className="left-sidebar bg-sidebar">
                 <div id="sidebar" className="sidebar sidebar-with-footer">
                     <div className="app-brand">
-                        <a href="/index.html">
+                        <a href="/">
                             <svg
                                 className="brand-icon"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@ class Sidebar extends Component {
                     <div className="sidebar-scrollbar">
 
                         <ul className="nav sidebar-inner" id="sidebar-menu">
-                            <li className={this.props.hasPages || this.props.hasChart || currentPath.includes('profile') || currentPath.includes('invoice') || currentPath.includes('error') ? "" : "active"} >
+                            <li className={this.props.hasPages || this.props.hasChart || currentPath.includes('profile') || currentPath.includes('invoice') || currentPath.includes('error') ? "" : "active"} onClick={this.props.dashboard}>
                                 <Link className="sidenav-item-link" to="/" data-toggle="collapse" data-target="#dashboard"
                                     aria-expanded="false" aria-controls="dashboard">
                                     <i className="mdi mdi-view-dashboard-outline"></i>
@@ -48,13 +48,13 @@ class Sidebar extends Component {
                                     <i className="mdi mdi-chart-pie"></i>
                                     <span className="nav-text">Charts</span> <b className="caret"></b>
                                 </a>
-                                <ul className={this.props.hasChart ? "collapse show" : "collapse"} id="charts"
+                                <ul className={this.props.hasChart ? "collapse show" : currentPath.includes('charts') && this.props.hasChart ? "collapse show" : "collapse"} id="charts"
                                     data-parent="#sidebar-menu">
                                     <div className="sub-menu">
 
 
 
-                                        <li >
+                                        <li onClick={this.props.charts}>
                                             <Link className="sidenav-item-link" to="/charts">
                                                 <span className="nav-text">ChartJS</span>
 
@@ -68,7 +68,7 @@ class Sidebar extends Component {
                                 </ul>
                             </li>
 
-                            <li className={this.props.hasPages || currentPath.includes('profile') || currentPath.includes('invoice') || currentPath.includes('error') ? "has-sub active expand  " : "has-sub"} onClick={this.props.pages}>
+                            <li className={this.props.hasPages ? "has-sub active expand  " : "has-sub"} onClick={this.props.pages}>
                                 <a className={this.props.hasPages ? "sidenav-item-link" : "sidenav-item-link collapsed"} href="javascript:void(0)" data-toggle="collapse" data-target="#pages"
                                     aria-expanded="false" aria-controls="pages">
                                     <i className="mdi mdi-image-filter-none"></i>
@@ -80,7 +80,7 @@ class Sidebar extends Component {
 
 
 
-                                        <li >
+                                        <li onClick={this.props.pages}>
                                             <Link className="sidenav-item-link" to="/profile">
                                                 <span className="nav-text">User Profile</span>
 
@@ -99,11 +99,11 @@ class Sidebar extends Component {
                                             <ul className={this.props.hasSubAuth ? "collapse show" : "collapse"} id="authentication">
                                                 <div className="sub-menu">
 
-                                                    <li >
+                                                    <li onClick={this.props.auths}>
                                                         <Link to="/signin">Sign In</Link>
                                                     </li>
 
-                                                    <li >
+                                                    <li onClick={this.props.auths}>
                                                         <Link to="/signup">Sign Up</Link>
                                                     </li>
 
@@ -122,11 +122,11 @@ class Sidebar extends Component {
                                             <ul className={this.props.hasOtherPages ? "collapse show" : "collapse"} id="others">
                                                 <div className="sub-menu">
 
-                                                    <li >
+                                                    <li onClick={this.props.invoice}>
                                                         <Link to="/invoice">invoice</Link>
                                                     </li>
 
-                                                    <li >
+                                                    <li onClick={this.props.invoice}>
                                                         <Link to="/error">Error</Link>
                                                     </li>
 
@@ -143,7 +143,7 @@ class Sidebar extends Component {
 
                     </div>
                 </div>
-            </aside>
+            </aside >
         );
     }
 }
@@ -160,7 +160,9 @@ const mapDispatchToProps = dispatch => {
         charts: () => dispatch({ type: actionTypes.HAS_CHART }),
         pages: () => dispatch({ type: actionTypes.HAS_PAGES }),
         auths: () => dispatch({ type: actionTypes.HAS_SUB_AUTH }),
-        others: () => dispatch({ type: actionTypes.HAS_OTHER_PAGES })
+        others: () => dispatch({ type: actionTypes.HAS_OTHER_PAGES }),
+        dashboard: () => dispatch({ type: actionTypes.DASHBOARD }),
+        invoice: () => dispatch({ type: actionTypes.INVOICE_MENU })
     }
 
 }

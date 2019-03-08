@@ -16,7 +16,7 @@ class Cardchart extends Component {
                         <p>{this.props.data.datachart.details.title}</p>
 
                         <div className="chartjs-wrapper">
-                            {this.props.data.datachart.details.type == "Bar" ?
+                            {this.props.data.datachart.details.type === "Bar" ?
                                 <Bar
                                     data={this.props.data.datachart}
                                     options={{
@@ -61,7 +61,7 @@ class Cardchart extends Component {
                                     }}
                                 /> :
 
-                                this.props.data.datachart.details.type == "Line" ?
+                                this.props.data.datachart.details.type === "Line" ?
                                     <Line
                                         data={this.props.data.datachart}
                                         options={{

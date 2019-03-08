@@ -47,17 +47,17 @@ class Topproducts extends Component {
         return (
             <div className="col-xl-7">
                 <div className="card card-default" data-scroll-height="580">
-                    <div className="card-header justify-content-between mb-4">
+                    <div className="card-header justify-content-between mb-4" id='topproducts'>
                         <h2>Top Products</h2>
                         <div>
                             <button className="text-black-50 mr-2 font-size-20"><i className="mdi mdi-cached"></i></button>
                             <div className="dropdown show d-inline-block widget-dropdown">
-                                <button className="dropdown-toggle icon-burger-mini" href="#" role="button" id="dropdown-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" onClick={this.handleAction}></button>
+                                <a className="dropdown-toggle icon-burger-mini" href="#topproducts" role="button" id="dropdown-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static" onClick={this.handleAction}></a>
                                 {this.state.showAction ?
                                     <ul className="dropdown-menu dropdown-menu-right show" aria-labelledby="dropdown-notification">
-                                        <li className="dropdown-item"><a href="#">Action</a></li>
-                                        <li className="dropdown-item"><a href="#">Another action</a></li>
-                                        <li className="dropdown-item"><a href="#">Something else here</a></li>
+                                        <li className="dropdown-item"><a href="#topproducts">Action</a></li>
+                                        <li className="dropdown-item"><a href="#topproducts">Another action</a></li>
+                                        <li className="dropdown-item"><a href="#topproducts">Something else here</a></li>
                                     </ul> : null
                                 }
                             </div>
@@ -69,10 +69,10 @@ class Topproducts extends Component {
                         {this.state.products.map((product, index) =>
                             <div className="media d-flex mb-5" style={{ 'textAlign': 'left' }} key={index}>
                                 <div className="media-image align-self-center mr-3 rounded">
-                                    <a href="#"><img src={product.image} alt="customer image" /></a>
+                                    <a href="#topproducts"><img src={product.image} alt="customer avatar" /></a>
                                 </div>
                                 <div className="media-body align-self-center">
-                                    <a href="#"><h6 className="mb-3 text-dark font-weight-medium"> {product.title}</h6></a>
+                                    <a href="#topproducts"><h6 className="mb-3 text-dark font-weight-medium"> {product.title}</h6></a>
                                     <p className="float-md-right"><span className="text-dark mr-2">{product.total_sale}</span>Sales</p>
                                     <p className="d-none d-md-block">{product.description}</p>
                                     <p className="mb-0">

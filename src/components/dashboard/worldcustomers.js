@@ -11,12 +11,12 @@ class Worldcustomers extends Component {
                     <div className="card-header d-block d-md-flex justify-content-between">
                         <h2>World Wide Customer </h2>
                         <div className="dropdown show d-inline-block widget-dropdown ml-auto">
-                            <a className="dropdown-toggle" href="#" role="button" id="world-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
+                            <a className="dropdown-toggle" href="/" role="button" id="world-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-display="static">
                                 World Wide
                         </a>
                             <ul className="dropdown-menu dropdown-menu-right" aria-labelledby="world-dropdown">
-                                <li className="dropdown-item"><a href="#">Continetal chart</a></li>
-                                <li className="dropdown-item"><a href="#">Sub-continental</a></li>
+                                <li className="dropdown-item"><a href="/">Continetal chart</a></li>
+                                <li className="dropdown-item"><a href="/">Sub-continental</a></li>
                             </ul>
                         </div>
                     </div>

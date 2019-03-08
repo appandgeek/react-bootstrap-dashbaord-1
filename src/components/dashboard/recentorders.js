@@ -34,7 +34,7 @@ class Recentorders extends Component {
 
     handleAction(val) {
 
-        if (this.state.showAction != val) {
+        if (this.state.showAction !== val) {
             this.setState({
 
                 showAction: val

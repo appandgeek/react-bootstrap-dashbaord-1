@@ -12,3 +12,5 @@ export function addElement(value) {
     };
 }
 export const UPDATE_TASK_STATUS = "UPDATETASKSTATUS";
+export const DASHBOARD = "DASHBOARD";
+export const INVOICE_MENU = "INVOICEMENU";

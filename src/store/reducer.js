@@ -33,14 +33,7 @@ const reducer = (state = initialState, action) => {
                 addTask: !state.addTask
             }
         case actionTypes.ADD_NEW_ELEMENT:
-            console.log(action.result);
-            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
-            ];
-            // const obj = {
-            //     'title': action.result, 'added_on': (monthNames[new Date().getMonth() + 1]) + " " + new Date().getDate() + "," + new Date().getFullYear(),
-            //     'status': false
-            // }
+
             const obj = {
                 'title': action.result, 'added_on': "Today",
                 'status': false
@@ -57,27 +50,65 @@ const reducer = (state = initialState, action) => {
                 todoList: state.todoList.map((list, i) => i === action.ids ? { ...list, status: !list.status } : list)
             }
         case actionTypes.HAS_CHART:
-            return {
-                ...state,
-                hasChart: !state.hasChart
-            }
+            if (state.hasChart)
+                return {
+                    ...state,
+                    hasChart: !state.hasChart,
+                    hasPages: !state.hasChart
+                }
+            else
+
+                return {
+                    ...state,
+                    hasChart: !state.hasChart,
+                    hasPages: state.hasChart
+                }
+
         case actionTypes.HAS_PAGES:
-            return {
-                ...state,
-                hasPages: !state.hasPages
-            }
+            if (state.hasPages)
+                return {
+                    ...state,
+                    hasPages: !state.hasPages,
+                    hasChart: !state.hasPages
+                }
+            else
+                return {
+                    ...state,
+                    hasPages: !state.hasPages,
+                    hasChart: state.hasPages
+                }
 
         case actionTypes.HAS_SUB_AUTH:
             return {
                 ...state,
                 hasPages: !state.hasPages,
-                hasSubAuth: !state.hasSubAuth
+                hasSubAuth: !state.hasSubAuth,
+                hasOtherPages: false,
             }
         case actionTypes.HAS_OTHER_PAGES:
+
             return {
                 ...state,
                 hasPages: !state.hasPages,
-                hasOtherPages: !state.hasOtherPages
+                hasOtherPages: !state.hasOtherPages,
+                hasSubAuth: false,
+            }
+
+        case actionTypes.DASHBOARD:
+
+            return {
+                ...state,
+                hasPages: false,
+                hasChart: false
+            }
+
+        case actionTypes.INVOICE_MENU:
+
+            return {
+                ...state,
+                hasPages: true,
+                hasOtherPages: false,
+                hasSubAuth: false
             }
 
         default:
@@ -85,8 +116,6 @@ const reducer = (state = initialState, action) => {
                 ...state
             };
     }
-    return state;
-
 };
 
 export default reducer;

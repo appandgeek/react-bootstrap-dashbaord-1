@@ -7,7 +7,7 @@ const userdetails = (props) => {
             <div className="profile-content-left pt-5 pb-3 px-3 px-xl-5">
                 <div className="card text-center widget-profile px-0 border-0">
                     <div className="card-img mx-auto rounded-circle">
-                        <img src="assets/img/user/u6.jpg" alt="user image" />
+                        <img src="assets/img/user/u6.jpg" alt="user avatar" />
                     </div>
                     <div className="card-body">
                         <h4 className="py-2 text-dark">{props.basic_details.name}</h4>

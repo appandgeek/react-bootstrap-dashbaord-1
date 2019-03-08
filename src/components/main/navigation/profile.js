@@ -44,13 +44,13 @@ class Profile extends Component {
         return (
             <div className="dropdown user-menu show" ref={node => { this.node = node; }}>
                 <button className="dropdown-toggle nav-link" onClick={this.handleClick}>
-                    <img src="assets/img/user/user.png" className="user-image" alt="User Image" />
+                    <img src="assets/img/user/user.png" className="user-image" alt="User avatar" />
                     <span className="d-none d-lg-inline-block">Abdus Salam</span>
                 </button>
                 <ul className={this.state.showProfile ? "dropdown-menu dropdown-menu-right show" : "dropdown-menu dropdown-menu-right"}>
 
                     <li className="dropdown-header">
-                        <img src="assets/img/user/user.png" className="img-circle" alt="User Image" />
+                        <img src="assets/img/user/user.png" className="img-circle" alt="User avatar" />
                         <div className="d-inline-block">
                             Abdus Salam <small className="pt-1">abdus@gmail.com</small>
                         </div>

@@ -29,7 +29,7 @@ class Todolist extends Component {
                             </div> : null
                         }
                         <div className="todo-list " id="todo-list">
-                            {this.props.todoList.map((list, index) =>
+                            {this.props.todoList.reverse().map((list, index) =>
                                 <div className={list.status ? "todo-single-item d-flex flex-row justify-content-between finished" : "todo-single-item d-flex flex-row justify-content-between "} key={index}>
                                     <i className="mdi" onClick={this.props.finishTask.bind(this, index)}></i>
                                     <span >{list.title}</span>

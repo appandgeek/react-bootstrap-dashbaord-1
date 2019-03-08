@@ -172,7 +172,7 @@ class Salesoverview extends Component {
 
     }
     render() {
-        console.log(this.state.showSalesStatus);
+
         return (
 
             <div className="col-xl-4 col-lg-6 col-12">
